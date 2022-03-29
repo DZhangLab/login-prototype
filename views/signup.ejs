@@ -1,0 +1,84 @@
+<%- include("partials/header") -%>
+
+
+<div class="container mt-5">
+  <h1>Register</h1>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- Makes POST request to /register route -->
+          <!--  div for first and last name  -->
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>First Name</label>
+                  <input type="text" name="firstName" class="form-control">
+                </div>
+                <div class="col">
+                  <label>Last Name</label>
+                  <input type="text" name="lastName" class="form-control">
+                </div>
+              </div>
+            </div>
+            <!-- div for email and phone number -->
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="email">
+                </div>
+                <div class="col">
+                  <label for="phone">Phone Number</label>
+                  <input type="phone" class="form-control" name="phone">
+                </div>
+              </div>
+            </div>
+            <!-- div for password and confirm password -->
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>Password</label>
+                  <input type="password" name="password" class="form-control">
+                </div>
+                <div class="col">
+                  <label>Confirm Password</label>
+                  <input type="password" name="confirmPassword" class="form-control">
+                </div>
+              </div>
+            </div>
+            <!-- button for submit the post request -->
+            <button type="submit" class="btn btn-primary btn-registerpage">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- three oauth with Google, Facebook, and Twitter -->
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google oauthbtn btn-registerpage" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+          <a class="btn btn-block btn-social btn-facebook oauthbtn btn-registerpage" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+          <a class="btn btn-block btn-social btn-twitter oauthbtn btn-registerpage" href="/auth/facebook" role="button">
+            <i class="fab fa-twitter"></i>
+            Sign Up with Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%- include("partials/footer") -%>
