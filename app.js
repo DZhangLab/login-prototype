@@ -342,8 +342,10 @@ app.get("/content", function(req, res) {
 // the route for 2fa
 app.get("/2fa/:postName", function(req, res) {
   const authEmail = req.params.postName;
-  verCodeRandom = Math.round(Math.random() * 1000000);
-
+  let verCodeRandom = 0
+  while (verCodeRandom < 99999) {
+    verCodeRandom = Math.round(Math.random() * 1000000);
+  }
   //   const date_ob = new Date();
   // // current date
   // // adjust 0 before single digit date
